@@ -1,15 +1,27 @@
 {
-    "name": "DescPDF",
-    "description": "Easily save job descriptions as PDF files.",
-    "version": "1.0",
-    "manifest_version": 3,
-    "action": {
-      "default_title": "Print this page",
-      "default_icon": "images/hello_extensions.png"
-    },
-    "permissions": ["scripting", "activeTab"],
-    "background": {
-      "service_worker": "background.js"
+  "manifest_version": 3,
+  "name": "DescPDF",
+  "version": "1.0",
+  "description": "Easily save job descriptions as PDF files.",
+  "permissions": ["scripting", "activeTab", "tabs", "identity"],
+  "oauth2": {
+    "client_id": "71cfb0743bf5099",
+    "scopes": []
+  },
+  "externally_connectable": {
+    "matches": ["https://lkbfjchfhmcmgddgammhilplpbjgdihp.chromiumapp.org/"]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Save job description",
+    "default_icon": "/images/logo.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["scroll.js"],
+      "matches": ["<all_urls>"]
     }
-  
-  }
+  ]
+}
